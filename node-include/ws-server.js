@@ -6,6 +6,7 @@ var WSserver = function() {
 
 	this.wss = null;
 	this.sessionStore = null;
+	this.helpersInstance = null;
 
 	/**
 	 *
@@ -33,11 +34,12 @@ var WSserver = function() {
 		 */
 		var WebSocketServer = require('ws').Server;
 		this.wss = new WebSocketServer({
-				port: 3001
+				port: 3101
 		});
 
 		var that = this;
 		that.sessionStore = sessionStore;
+		that.helpersInstance = HelpersInstance;
 
 		/**
 		 *
@@ -76,10 +78,10 @@ var WSserver = function() {
  		 */
 		that.wss.on('connection', function (ws) {
 			ws.on('message', function (message) {
-				/*console.log('received: %s', JSON.parse(message));
-				console.log(JSON.parse(message).login);*/
+				/*console.log('received: %s', JSON.parse(message));*/
+				//console.log(JSON.parse(message).login);
 				ws.login = JSON.parse(message).login;
-				if (HelpersInstance.findUser(ws.login, that.sessionStore)) {
+				if (that.helpersInstance.findUser(ws.login, that.sessionStore)) {
 					that.wss.broadcast(JSON.parse(message));
 				}
 			});

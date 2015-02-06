@@ -38,6 +38,9 @@ class NodeJsAuthBridge {
 	 */
 	public function login($post) {
 		$userAgent = $_SERVER['HTTP_USER_AGENT'];
+		$randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 50);
+		setcookie("login", $randomString);
+		$post['hash'] = $randomString;
 
 		//open connection
 		$ch = curl_init();
@@ -69,9 +72,12 @@ class NodeJsAuthBridge {
 		// get cookie
 		preg_match('/^Set-Cookie:\s*([^;]*)/mi', $result, $m);
 
-		if (isset($m[1])) {
+		if (isset($m[1]) && $result != "error") {
 			parse_str($m[1], $this->cookies);
 			$_SESSION['remote'] = $this->cookies;
+		} else {
+			unset($_COOKIE['login']);
+			setcookie('login', null, time() - 3600);
 		}
 
 		//close connection

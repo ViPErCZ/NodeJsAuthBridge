@@ -8,9 +8,6 @@ $isLoggedIn = false;
 
 if (isset($_POST['sender'])) {
 	unset($_POST['sender']);
-	$randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 50);
-	setcookie("login", $randomString);
-	$_POST['hash'] = $randomString;
 	$nodeBridge->login($_POST);
 	header('Location: index.php', true, 302);
 } elseif (isset($_GET['action']) && $_GET['action'] === "logout") {
@@ -26,11 +23,10 @@ var_dump($_COOKIE);
 <html>
 <head>
 <meta charset="UTF-8">
-</head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 	if (window.WebSocket) {
-		var w = new WebSocket("ws://localhost:3001");
+		var w = new WebSocket("ws://localhost:3101");
 		w.onopen = function () {
 			var login = "<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login']; else echo ""; ?>";
 			var data = "{\"login\":\"" + login + "\"}";

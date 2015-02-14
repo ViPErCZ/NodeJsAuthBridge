@@ -4,6 +4,7 @@ session_start();
 include_once __DIR__ . "/class/NodeJsAuthBridge.php";
 
 $nodeBridge = new \Nodejs\NodeJsAuthBridge();
+$nodeBridge->setPath("/nodejs/NodeJsAuthBridge");
 $isLoggedIn = false;
 
 if (isset($_POST['sender'])) {
@@ -18,12 +19,31 @@ if (isset($_POST['sender'])) {
 }
 
 var_dump($_COOKIE);
+var_dump($_SERVER['REQUEST_URI']);
 
 ?>
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/dropzone.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/dropzone/dropzone.min.js"></script>
+    <script>
+
+        jQuery.support.cors = true;
+        Dropzone.options.myAwesomeDropzone = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 20000000000, // MB
+            withCredentials: true,
+            forceFallback: false,
+            url: 'http://localhost:3000/nodejs/NodeJsAuthBridge/upload',
+            accept: function(file, done) {
+                done();
+            }
+        };
+
+
+    </script>
 <script>
 	if (window.WebSocket) {
 		var w = new WebSocket("ws://localhost:3101");
@@ -58,6 +78,12 @@ var_dump($_COOKIE);
 </form>
 <?php else: ?>
 	<a href="index.php?action=logout">logout</a>
+
+    <br>
+    <br>
+
+    <div class="dropzone" id="my-awesome-dropzone"></div>
+
 <?php endif ?>
 
 <div>

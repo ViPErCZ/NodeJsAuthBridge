@@ -17,6 +17,9 @@ class NodeJsAuthBridge {
 	/** @var string */
 	protected $url = "http://localhost:3000";
 
+    /** @var string */
+    protected $path;
+
 	/** @var string */
 	protected $fields_string;
 
@@ -31,6 +34,20 @@ class NodeJsAuthBridge {
 			$this->cookies = $_SESSION['remote'];
 		}
 	}
+
+    /**
+     * @return string
+     */
+    public function getPath() {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path) {
+        $this->path = $path;
+    }
 
 
 	/**
@@ -51,7 +68,7 @@ class NodeJsAuthBridge {
 		$this->fields_string = http_build_query($post);
 
 		//set the url, number of POST vars, POST data
-		curl_setopt($ch,CURLOPT_URL, $this->url . "/login");
+		curl_setopt($ch,CURLOPT_URL, $this->url . $this->path . "/login");
 		curl_setopt($ch,CURLOPT_POST, count($post));
 		curl_setopt($ch,CURLOPT_POSTFIELDS, $this->fields_string);
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
@@ -75,6 +92,7 @@ class NodeJsAuthBridge {
 		if (isset($m[1]) && $result != "error") {
 			parse_str($m[1], $this->cookies);
 			$_SESSION['remote'] = $this->cookies;
+            setcookie("connect.sid", $this->cookies['connect_sid']);
 		} else {
 			unset($_COOKIE['login']);
 			setcookie('login', null, time() - 3600);
@@ -94,7 +112,7 @@ class NodeJsAuthBridge {
 		$ch = curl_init();
 
 		//set the url, number of POST vars, POST data
-		curl_setopt($ch,CURLOPT_URL, $this->url . "/logout");
+		curl_setopt($ch,CURLOPT_URL, $this->url . $this->path . "/logout");
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT ,3);
 		curl_setopt($ch,CURLOPT_TIMEOUT, 20);
@@ -107,7 +125,7 @@ class NodeJsAuthBridge {
 		curl_setopt($ch, CURLOPT_HEADER, 1);
 
 		//execute post
-		$result = curl_exec($ch);
+		curl_exec($ch);
 
 		//close connection
 		curl_close($ch);
@@ -121,9 +139,6 @@ class NodeJsAuthBridge {
 	 * @return bool
 	 */
 	public function isLoggedIn() {
-
-		//echo file_get_contents($this->url . "/test"); //?login=" . $_COOKIE['login']);
-		//var_dump($_COOKIE);
 		if (isset($_COOKIE['login'])) {
 			$userAgent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -135,7 +150,7 @@ class NodeJsAuthBridge {
 			session_write_close();
 
 			//set the url, number of POST vars, POST data
-			curl_setopt($ch, CURLOPT_URL, $this->url . "/test");
+			curl_setopt($ch, CURLOPT_URL, $this->url . $this->path . "/test");
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $this->fields_string);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

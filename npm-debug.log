@@ -1,0 +1,231 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json NodeJsAuthBridge@0.2.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ 'C:\\Filebox\\www\\sklad\\nodejs\\NodeJsAuthBridge',
+7 verbose install   [ 'body-parser',
+7 verbose install     'ejs',
+7 verbose install     'express',
+7 verbose install     'express-session',
+7 verbose install     'cookie-parser',
+7 verbose install     'mysql',
+7 verbose install     'ws',
+7 verbose install     'formidble',
+7 verbose install     'cluster' ] ]
+8 info preinstall NodeJsAuthBridge@0.2.0
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping body-parser@^1.7.0 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+11 verbose already installed skipping ejs@^1.0.0 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+12 verbose already installed skipping express@^4.8.7 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+13 verbose already installed skipping express-session@^1.7.6 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+14 verbose already installed skipping cookie-parser@^1.3.3 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+15 verbose already installed skipping mysql@^2.5.4 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+16 verbose already installed skipping ws@^0.7.1 C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+17 verbose cache add [ 'formidble@^1.0.16', null ]
+18 verbose cache add name=undefined spec="formidble@^1.0.16" args=["formidble@^1.0.16",null]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: 'formidble@^1.0.16',
+19 verbose parsed url   path: 'formidble@^1.0.16',
+19 verbose parsed url   href: 'formidble@^1.0.16' }
+20 verbose cache add [ 'cluster@^0.7.7', null ]
+21 verbose cache add name=undefined spec="cluster@^0.7.7" args=["cluster@^0.7.7",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'cluster@^0.7.7',
+22 verbose parsed url   path: 'cluster@^0.7.7',
+22 verbose parsed url   href: 'cluster@^0.7.7' }
+23 verbose cache add name="formidble" spec="^1.0.16" args=["formidble","^1.0.16"]
+24 verbose parsed url { protocol: null,
+24 verbose parsed url   slashes: null,
+24 verbose parsed url   auth: null,
+24 verbose parsed url   host: null,
+24 verbose parsed url   port: null,
+24 verbose parsed url   hostname: null,
+24 verbose parsed url   hash: null,
+24 verbose parsed url   search: null,
+24 verbose parsed url   query: null,
+24 verbose parsed url   pathname: '^1.0.16',
+24 verbose parsed url   path: '^1.0.16',
+24 verbose parsed url   href: '^1.0.16' }
+25 verbose addNamed [ 'formidble', '^1.0.16' ]
+26 verbose addNamed [ null, '>=1.0.16-0 <2.0.0-0' ]
+27 verbose cache add name="cluster" spec="^0.7.7" args=["cluster","^0.7.7"]
+28 verbose parsed url { protocol: null,
+28 verbose parsed url   slashes: null,
+28 verbose parsed url   auth: null,
+28 verbose parsed url   host: null,
+28 verbose parsed url   port: null,
+28 verbose parsed url   hostname: null,
+28 verbose parsed url   hash: null,
+28 verbose parsed url   search: null,
+28 verbose parsed url   query: null,
+28 verbose parsed url   pathname: '^0.7.7',
+28 verbose parsed url   path: '^0.7.7',
+28 verbose parsed url   href: '^0.7.7' }
+29 verbose addNamed [ 'cluster', '^0.7.7' ]
+30 verbose addNamed [ null, '>=0.7.7-0 <0.8.0-0' ]
+31 silly lockFile 394682f1-formidble-1-0-16 formidble@^1.0.16
+32 verbose lock formidble@^1.0.16 C:\Users\Martin\AppData\Roaming\npm-cache\394682f1-formidble-1-0-16.lock
+33 silly lockFile a5de4e12-cluster-0-7-7 cluster@^0.7.7
+34 verbose lock cluster@^0.7.7 C:\Users\Martin\AppData\Roaming\npm-cache\a5de4e12-cluster-0-7-7.lock
+35 silly addNameRange { name: 'formidble',
+35 silly addNameRange   range: '>=1.0.16-0 <2.0.0-0',
+35 silly addNameRange   hasData: false }
+36 silly addNameRange { name: 'cluster', range: '>=0.7.7-0 <0.8.0-0', hasData: false }
+37 verbose request where is /formidble
+38 verbose request registry https://registry.npmjs.org/
+39 verbose request id f326b3adf71b3892
+40 verbose url raw /formidble
+41 verbose url resolving [ 'https://registry.npmjs.org/', './formidble' ]
+42 verbose url resolved https://registry.npmjs.org/formidble
+43 verbose request where is https://registry.npmjs.org/formidble
+44 info trying registry request attempt 1 at 17:20:37
+45 http GET https://registry.npmjs.org/formidble
+46 verbose request where is /cluster
+47 verbose request registry https://registry.npmjs.org/
+48 verbose url raw /cluster
+49 verbose url resolving [ 'https://registry.npmjs.org/', './cluster' ]
+50 verbose url resolved https://registry.npmjs.org/cluster
+51 verbose request where is https://registry.npmjs.org/cluster
+52 info trying registry request attempt 1 at 17:20:37
+53 verbose etag "ENZ4VIQNYUFLIFEVDRYQEIWXY"
+54 http GET https://registry.npmjs.org/cluster
+55 http 200 https://registry.npmjs.org/cluster
+56 silly registry.get cb [ 200,
+56 silly registry.get   { date: 'Sun, 15 Feb 2015 16:20:43 GMT',
+56 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+56 silly registry.get     etag: '"6RY6TTFXFWL1DK1NPTB085O5L"',
+56 silly registry.get     'content-type': 'application/json',
+56 silly registry.get     'cache-control': 'max-age=60',
+56 silly registry.get     'content-length': '38331',
+56 silly registry.get     'accept-ranges': 'bytes',
+56 silly registry.get     via: '1.1 varnish',
+56 silly registry.get     age: '23',
+56 silly registry.get     'x-served-by': 'cache-fra1245-FRA',
+56 silly registry.get     'x-cache': 'HIT',
+56 silly registry.get     'x-cache-hits': '1',
+56 silly registry.get     'x-timer': 'S1424017243.429127,VS0,VE0',
+56 silly registry.get     vary: 'Accept',
+56 silly registry.get     'keep-alive': 'timeout=10, max=50',
+56 silly registry.get     connection: 'Keep-Alive' } ]
+57 silly addNameRange number 2 { name: 'cluster', range: '>=0.7.7-0 <0.8.0-0', hasData: true }
+58 silly addNameRange versions [ 'cluster',
+58 silly addNameRange   [ '0.0.1',
+58 silly addNameRange     '0.0.2',
+58 silly addNameRange     '0.0.3',
+58 silly addNameRange     '0.0.4',
+58 silly addNameRange     '0.1.0',
+58 silly addNameRange     '0.1.1',
+58 silly addNameRange     '0.2.0',
+58 silly addNameRange     '0.2.1',
+58 silly addNameRange     '0.2.2',
+58 silly addNameRange     '0.2.3',
+58 silly addNameRange     '0.2.4',
+58 silly addNameRange     '0.3.0',
+58 silly addNameRange     '0.3.1',
+58 silly addNameRange     '0.3.2',
+58 silly addNameRange     '0.3.3',
+58 silly addNameRange     '0.4.0',
+58 silly addNameRange     '0.4.1',
+58 silly addNameRange     '0.4.2',
+58 silly addNameRange     '0.5.0',
+58 silly addNameRange     '0.5.1',
+58 silly addNameRange     '0.5.2',
+58 silly addNameRange     '0.5.3',
+58 silly addNameRange     '0.5.4',
+58 silly addNameRange     '0.5.5',
+58 silly addNameRange     '0.5.6',
+58 silly addNameRange     '0.5.7',
+58 silly addNameRange     '0.6.0',
+58 silly addNameRange     '0.6.1',
+58 silly addNameRange     '0.6.2',
+58 silly addNameRange     '0.6.3',
+58 silly addNameRange     '0.6.4',
+58 silly addNameRange     '0.6.5',
+58 silly addNameRange     '0.6.6',
+58 silly addNameRange     '0.6.7',
+58 silly addNameRange     '0.6.8',
+58 silly addNameRange     '0.6.9',
+58 silly addNameRange     '0.7.0',
+58 silly addNameRange     '0.7.1',
+58 silly addNameRange     '0.7.2',
+58 silly addNameRange     '0.7.3',
+58 silly addNameRange     '0.7.4',
+58 silly addNameRange     '0.7.5',
+58 silly addNameRange     '0.7.6',
+58 silly addNameRange     '0.7.7' ] ]
+59 verbose addNamed [ 'cluster', '0.7.7' ]
+60 verbose addNamed [ '0.7.7', '0.7.7' ]
+61 silly lockFile 2f1e02aa-cluster-0-7-7 cluster@0.7.7
+62 verbose lock cluster@0.7.7 C:\Users\Martin\AppData\Roaming\npm-cache\2f1e02aa-cluster-0-7-7.lock
+63 silly lockFile 2f1e02aa-cluster-0-7-7 cluster@0.7.7
+64 silly lockFile 2f1e02aa-cluster-0-7-7 cluster@0.7.7
+65 silly lockFile a5de4e12-cluster-0-7-7 cluster@^0.7.7
+66 silly lockFile a5de4e12-cluster-0-7-7 cluster@^0.7.7
+67 http 404 https://registry.npmjs.org/formidble
+68 verbose headers { date: 'Sun, 15 Feb 2015 16:20:43 GMT',
+68 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+68 verbose headers   'content-type': 'application/json',
+68 verbose headers   'cache-control': 'max-age=0',
+68 verbose headers   'content-length': '52',
+68 verbose headers   'accept-ranges': 'bytes',
+68 verbose headers   via: '1.1 varnish',
+68 verbose headers   age: '0',
+68 verbose headers   'x-served-by': 'cache-fra1220-FRA',
+68 verbose headers   'x-cache': 'MISS',
+68 verbose headers   'x-cache-hits': '0',
+68 verbose headers   'x-timer': 'S1424017243.442961,VS0,VE426',
+68 verbose headers   'keep-alive': 'timeout=10, max=50',
+68 verbose headers   connection: 'Keep-Alive' }
+69 silly registry.get cb [ 404,
+69 silly registry.get   { date: 'Sun, 15 Feb 2015 16:20:43 GMT',
+69 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+69 silly registry.get     'content-type': 'application/json',
+69 silly registry.get     'cache-control': 'max-age=0',
+69 silly registry.get     'content-length': '52',
+69 silly registry.get     'accept-ranges': 'bytes',
+69 silly registry.get     via: '1.1 varnish',
+69 silly registry.get     age: '0',
+69 silly registry.get     'x-served-by': 'cache-fra1220-FRA',
+69 silly registry.get     'x-cache': 'MISS',
+69 silly registry.get     'x-cache-hits': '0',
+69 silly registry.get     'x-timer': 'S1424017243.442961,VS0,VE426',
+69 silly registry.get     'keep-alive': 'timeout=10, max=50',
+69 silly registry.get     connection: 'Keep-Alive' } ]
+70 silly lockFile 394682f1-formidble-1-0-16 formidble@^1.0.16
+71 silly lockFile 394682f1-formidble-1-0-16 formidble@^1.0.16
+72 error 404 404 Not Found: formidble
+72 error 404
+72 error 404 'formidble' is not in the npm registry.
+72 error 404 You should bug the author to publish it
+72 error 404 It was specified as a dependency of 'NodeJsAuthBridge'
+72 error 404
+72 error 404 Note that you can also install from a
+72 error 404 tarball, folder, or http url, or git url.
+73 error System Windows_NT 6.1.7600
+74 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+75 error cwd C:\Filebox\www\sklad\nodejs\NodeJsAuthBridge
+76 error node -v v0.10.33
+77 error npm -v 1.4.28
+78 error code E404
+79 verbose exit [ 1, true ]

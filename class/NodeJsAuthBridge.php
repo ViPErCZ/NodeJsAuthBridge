@@ -182,7 +182,7 @@ class NodeJsAuthBridge {
 			//var_dump($this->cookies);
 			//var_dump($result);
 
-			return $result === "not logged" ? false : true;
+			return $result === "not logged" || $result === false ? false : true;
 		} else {
 			return false;
 		}

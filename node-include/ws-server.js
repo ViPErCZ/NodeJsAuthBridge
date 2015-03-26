@@ -55,7 +55,9 @@ var WSserver = function() {
 						console.log(ws.clients[i].login);*/
 						var date = new Date(JSON.parse(that.sessionStore.sessions[x]).cookie.expires);
 						var today = new Date(Date.now());
-						if (date - today > 0 && HelpersInstance.findUser(ws.clients[i].login, that.sessionStore)) {
+						if (date - today > 0 
+							&& JSON.parse(that.sessionStore.sessions[x]).email != undefined 
+							&& JSON.parse(that.sessionStore.sessions[x]).email != "") {
 							if (users != "") {
 								users += ", ";
 							}

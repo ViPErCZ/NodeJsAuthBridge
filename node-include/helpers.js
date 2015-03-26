@@ -16,7 +16,9 @@ var Helpers = function() {
 				var date = new Date(JSON.parse(sessionStore.sessions[x]).cookie.expires);
 				var today = new Date(Date.now());
 				if (date - today > 0) {
-					if (JSON.parse(sessionStore.sessions[x]).login == login) {
+					if (JSON.parse(sessionStore.sessions[x]).login == login 
+						&& JSON.parse(sessionStore.sessions[x]).email != undefined 
+						&& JSON.parse(sessionStore.sessions[x]).email != "") {
 						return true;
 					}
 				} else {
